@@ -1,9 +1,11 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 
-const Greeting = (props) => {
+const ItemListContainer = (props) => {
     return (
-        <Card style={{ width: '18rem'}}>
+        
+        <p>{props.greeting}</p>
+/*         <Card style={{ width: '18rem'}}>
             <Card.Img variant="top" src="" />
             <Card.Body>
                 <Card.Title>Card Title</Card.Title>
@@ -13,7 +15,7 @@ const Greeting = (props) => {
                 </Card.Text>
                 <Button variant="primary">Go somewhere</Button>
              </Card.Body>
-        </Card>
+        </Card> */
     );
 }
-export default Greeting;
+export default ItemListContainer;

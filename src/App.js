@@ -1,5 +1,5 @@
-import NavBar from './components/navbar'
-import ItemlistContainer from './components/itemlistContainer';
+import NavBar from './components/NavBar'
+import ItemlistContainer from './components/ItemListContainer';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
         <NavBar/>
         </div>
       </header>
-      <ItemlistContainer/>
+      <ItemlistContainer greeting="aca va algo"/>
     </div>
     
   );
