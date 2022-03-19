@@ -9,7 +9,7 @@ function App() {
         <NavBar/>
         </div>
       </header>
-      <ItemlistContainer greeting="aca va algo"/>
+      <ItemlistContainer greeting="Esto es una prop"/>
     </div>
     
   );
