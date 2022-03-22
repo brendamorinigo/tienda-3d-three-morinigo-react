@@ -8,7 +8,6 @@ let [stock, setStock]= useState(10);
 function sumar(){
     if(contador<=stock){
       setContador(contador+1)
-      setStock(stock-1)
     }
     else{
         alert("sin stock")
@@ -21,6 +20,7 @@ function restar(){
     }
     else{
         setContador(contador-1)
+        setStock(stock+1)
     }    
 };
 
