@@ -1,20 +1,23 @@
-import React from 'react';
-import { Card, Button } from 'react-bootstrap';
+import React, { useState } from 'react';
+import Shopinitial from './ShopInicial'
 
-const ItemListContainer = (props) => {
-    return (
-         <Card style={{ width: '18rem'}}>
-            <Card.Img variant="top" src="" />
-            <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>            
-                <p>{props.greeting}</p>
-                     Some quick example text to build on the card title and make up the bulk of
-                    the card's content.
-                </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
-             </Card.Body>
-        </Card> 
-    );
+
+const ItemListContainer = () => {
+    const [products, setProducts]= useState(
+        [
+            {id:1, name:"cortante", price:100, stock:10},
+            {id:2, name:"iron man", price:800,stock:8},
+            {id:3, name:"maceta", price:300,stock:4},
+        ])
+    ;
+
+return (
+    <div className='containerCard'>
+    {products.map((product)=>{
+        return <Shopinitial name={product.name} price={product.price} stock={product.stock}/>
+    })}</div>
+);
+    
 }
-export default ItemListContainer;
+export default ItemListContainer; 
+

@@ -4,7 +4,7 @@ import Cartwidgets from "./CartWidgets"
 
 function navBar(){
     return(
-<Navbar bg="light" expand="lg">
+<Navbar bg="light" expand="lg" className="contenedor-nav">
   <Container>
     <Navbar.Brand href="#home">THREE</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
