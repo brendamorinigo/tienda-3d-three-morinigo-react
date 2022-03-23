@@ -1,37 +1,50 @@
-import React, { useState } from 'react';
-import Shopinitial from './ShopInicial'
+import React, { useEffect, useState } from 'react';
+import Itemlist from './itemlist'
 
-const stock=10;
-const initial=1;
 
-function onAdd(){
-    console.log("click")
-}
 
 const ItemListContainer = () => {
+    const [lista, setlista]=useState([]);
 
-return (
-    <div className='containerCard'>
-     <Shopinitial  stock={stock} initial={initial} onAdd={onAdd} />
-    </div>
+    const products= 
+        [
+            {id:1, name:"cortante", price:100, stock:12},
+            {id:2, name:"iron man", price:800,stock:12},
+            {id:3, name:"maceta", price:300,stock:12},
+        ]
+    ;
 
-);
-    
+    const promesa= new Promise((resolver, error)=>{
+        let condicion= true
+        if(condicion){
+            setTimeout(()=>{
+                resolver(products)
+            },3000)
+        }else{
+            error('esta mal')
+        }
+    })
+    useEffect(()=>{
+        promesa.then((result)=>setlista(result))
+        .catch((bad)=> console.log("error"))
+    },[]) 
+
+console.log(lista)
+    return(
+        <div>
+            <h1>
+                Saludo
+            </h1>
+            <Itemlist lista={lista}/>
+        </div>
+    )
 }
 export default ItemListContainer; 
 
 
-/* const [products, setProducts]= useState(
-    [
-        {id:1, name:"cortante", price:100},
-        {id:2, name:"iron man", price:800},
-        {id:3, name:"maceta", price:300},
-    ])
-;
 
-return (
-<div className='containerCard'>
-{products.map((product)=>{
-    return <Shopinitial name={product.name} price={product.price} stock={stock} initial={initial} onAdd={onAdd} />
-})}</div>
-); */
+
+
+
+
+
