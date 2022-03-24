@@ -5,6 +5,7 @@ import Itemlist from './itemlist'
 
 const ItemListContainer = () => {
     const [lista, setlista]=useState([]);
+    const[loading, setLoading]=useState(false);
 
     const products= 
         [
@@ -25,16 +26,18 @@ const ItemListContainer = () => {
         }
     })
     useEffect(()=>{
+        setLoading(true)
         promesa.then((result)=>setlista(result))
         .catch((bad)=> console.log("error"))
+        .finally(()=> setLoading(false))
     },[]) 
 
-console.log(lista)
     return(
         <div>
             <h1>
-                Saludo
+                Titulo
             </h1>
+            {loading ? <p>Loading...</p> : ''}
             <Itemlist lista={lista}/>
         </div>
     )

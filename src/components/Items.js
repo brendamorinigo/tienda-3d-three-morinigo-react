@@ -1,6 +1,6 @@
 import { Button, Card} from 'react-bootstrap';
 
-function item(product){
+function item({product}){
     return (
         <div className='card'>
                         <Card style={{ width: '18rem'}} className="contenedor-card">
