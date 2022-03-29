@@ -1,10 +1,7 @@
 import NavBar from './components/NavBar'
 import ItemlistContainer from './components/ItemlistContainer';
 import Contador from './components/contador'
-
-
-const initial= 1;
-const stock=12;
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 function onAdd(){
 alert("agregado")
@@ -20,7 +17,7 @@ function App() {
         </div>
       </header>
     <ItemlistContainer/>
-    <Contador initial={initial} stock={stock} onAdd={onAdd} />
+    <ItemDetailContainer/>
     </div>
   );
 }
