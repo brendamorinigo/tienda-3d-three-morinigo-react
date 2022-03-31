@@ -8,8 +8,6 @@ const ItemDetailContainer = () => {
     .then((respuesta)=>setdetailProduct(respuesta.find((item)=> item.id===1)))
   }, [])
 
-console.log(detailProduct);
-
   return (
     <ItemDetail detailProduct={detailProduct}/>
   )

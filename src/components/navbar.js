@@ -6,23 +6,23 @@ function navBar(){
     return(
 <Navbar bg="light" expand="lg" className="contenedor-nav">
   <Container>
-    <Navbar.Brand href="#home">THREE</Navbar.Brand>
+    <Navbar.Brand href="/">THREE</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
-        <Nav.Link href="#home">Inicio</Nav.Link>
-        <Nav.Link href="#link">Novedades</Nav.Link>
+        <Nav.Link href="/">Inicio</Nav.Link>
+        <Nav.Link href="/contacto">Contacto</Nav.Link>
         <NavDropdown title="Productos" id="basic-nav-dropdown">
-          <NavDropdown.Item href="#action/3.1">Personajes</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">Moldes</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">Adornos</NavDropdown.Item>
+        <Nav.Link href="/categoria/nezuko">NEZUKO</Nav.Link>
+        <Nav.Link href="/categoria/sukuna">ZUKUNA</Nav.Link>
+        <Nav.Link href="/categoria/adorno">ADORNO</Nav.Link>
         </NavDropdown>
       </Nav>
     </Navbar.Collapse>  
     <Cartwidgets/>
   </Container>
-</Navbar>
-    )
+</Navbar> 
+)
 }
 export default navBar;
 

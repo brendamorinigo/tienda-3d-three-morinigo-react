@@ -6,7 +6,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+body{
+  background-color: rgb(220, 248, 239);
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -35,4 +37,57 @@ button{
 }
 .card{
   margin:10px;
+}
+
+.contendor-presentacion{
+  text-align: center;
+  width: 90%;
+  height:300px;
+  background-image:url(/img/Impresion-3d.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size:cover;
+  color: rgb(252, 252, 250);
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
+.contendor-presentacion p{
+  margin: 15px;
+}
+.contendor-presentacion h1{
+  margin-top: 1rem;
+}
+
+
+.container-pres{
+  margin: 1.25rem;
+}
+
+.form{
+  background-color: bisque;
+  height: 300px;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 3rem;
+  border-radius: 10px;
+}
+.mb-3{
+  display:flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.mb-3 textarea{
+  margin: 0 auto;
+  border-radius: 3px;
+}
+.mb-3 input{
+  margin: 5px;
+  border-radius: 3px;
+}
+.container-input{
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
 }
