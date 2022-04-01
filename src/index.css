@@ -34,11 +34,19 @@ button{
   width: 100%;
   height: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .card{
   margin:10px;
+  border: 0.2px solid rgb(202, 198, 198);
 }
-
+.separador{
+  width: 90%;
+  height: 20%;
+  border-bottom: 1px solid rgb(68, 67, 67);
+  margin: 0 auto;
+}
 .contendor-presentacion{
   text-align: center;
   width: 90%;
@@ -56,7 +64,7 @@ button{
 }
 .contendor-presentacion h1{
   margin-top: 1rem;
-}
+} 
 
 
 .container-pres{
@@ -78,16 +86,45 @@ button{
   width: 50%;
 }
 
-.mb-3 textarea{
+ .mb-3 textarea{
   margin: 0 auto;
   border-radius: 3px;
 }
 .mb-3 input{
   margin: 5px;
   border-radius: 3px;
-}
+} 
 .container-input{
   display: flex;
   flex-direction: column;
   margin: 5px;
+}
+.navbar-brand{
+  margin-left: 1rem;
+}
+.nav-link:hover{
+  background-color: rgb(57, 69, 69);
+}
+.cart{
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+  padding: 2px;
+}
+.cart:hover{
+  background-color: rgb(61, 58, 58);
+  padding: 4px;
+}
+.titulo-producto{
+  margin: 2rem;
+  text-align: center;
+  border-bottom: 1px solid rgb(167, 163, 163);
+}
+.btn-return{
+  margin: 20px;
+  width: 30%;
+  height: 10%;
+  background-color: rgb(208, 219, 238);
 }

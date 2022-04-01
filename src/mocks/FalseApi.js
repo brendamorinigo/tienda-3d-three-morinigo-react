@@ -1,5 +1,3 @@
-import { useHref } from "react-router-dom";
-
 const products= 
 [
     {id:1,categoria:"adorno", name:"HANMEN", price:100, stock:12, detail:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores modi pariatur cumque minima, totam quisquam cum asperiores earum nisi.", img:"https://images.cults3d.com/1f0EED767KlgvnWXlp3oTUwb_OQ=/516x516/filters:format(webp)/https://files.cults3d.com/uploaders/19873598/illustration-file/f71a1051-870f-4841-a983-29484ddf92aa/3-42.jpg"},
@@ -13,7 +11,7 @@ let condicion= true
 if(condicion){
     setTimeout(()=>{
         resolver(products)
-    },3000)
+    },2000)
 }else{
     error('esta mal')
 }

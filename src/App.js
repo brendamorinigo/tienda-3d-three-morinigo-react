@@ -1,5 +1,6 @@
 import NavBar from './components/NavBar'
 import ItemlistContainer from './components/ItemlistContainer';
+import ItemDetail from './components/ItemDetailContainer'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Contacto from './components/contacto';
 import Error from './components/error';
@@ -20,6 +21,7 @@ function App() {
       <Route path='/' element={<ItemlistContainer/>}/>
       <Route path='/categoria/:parametro' element={<ItemlistContainer/>}/>
       <Route path='/contacto' element={<Contacto/>}/>
+      <Route path='detail/:detalleId' element={<ItemDetail/>}/> {/* pide un unico item */}
       <Route path='*' element={<Error/>} />
     </Routes>
 {/*     <ItemDetailContainer/> */}

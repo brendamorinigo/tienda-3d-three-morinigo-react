@@ -24,7 +24,7 @@ const ItemListContainer = () => {
         })
         .catch((bad)=> console.log("error"))
         .finally(()=> setLoading(false))
-    },[]) 
+    },[parametro]) 
 
     return(
         <div>
