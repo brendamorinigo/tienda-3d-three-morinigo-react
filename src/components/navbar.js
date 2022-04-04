@@ -1,45 +1,24 @@
-import React from "react"; 
-import { Link} from 'react-router-dom'
-import Cartwidgets from './CartWidgets'
+import React from "react";
+import { Link } from "react-router-dom";
+import Cartwidgets from "./CartWidgets";
+import LinkCategorias from "./LinkCategorias";
 
-function navBar(){
-return (
-  <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
-      
-      <Link 
-          className="navbar-brand" 
-          to="/"
-      >
-          THREE
+function NavBar({ products }) {
+  return (
+    <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
+      <Link className="navbar-brand" to="/">
+        THREE
       </Link>
-
+      <Link className="navbar-brand" to="/">INICIO</Link>
       <div className="navbar-collapse">
-          <div className="navbar-nav">
-
-              <Link  
-                  className="nav-item nav-link" 
-                  to="/categoria/nezuko"
-              >
-                  NEZUKO
-              </Link >
-
-              <Link  
-                  className="nav-item nav-link" 
-                  to="/categoria/sukuna"
-              >
-                  SUKUNA
-              </Link >
-              <Link  
-                  className="nav-item nav-link" 
-                  to="/categoria/adorno"
-              >
-                  ADORNOS
-              </Link >
-          </div>
+        <div className="navbar-nav">
+          {products.map((category) => (
+            <LinkCategorias category={category} key={category.id} />
+          ))}
+        </div>
       </div>
-      <Cartwidgets/>
-  </nav>
-)
+      <Cartwidgets />
+    </nav>
+  );
 }
-export default navBar;
-
+export default NavBar;

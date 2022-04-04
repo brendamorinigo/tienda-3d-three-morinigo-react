@@ -1,6 +1,6 @@
 import React from "react"; 
 
-function iconcart() {
+function CartWidgets() {
 return(
   <div className="cart">
   <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
@@ -9,4 +9,4 @@ return(
 </div>
 )
 }
-export default iconcart;
+export default CartWidgets;

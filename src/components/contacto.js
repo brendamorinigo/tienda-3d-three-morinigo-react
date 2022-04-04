@@ -1,6 +1,6 @@
 import React from "react";
 
-function contacto() {
+function Contacto() {
 return(
     <div className="form">
     <div className="mb-3">
@@ -21,4 +21,4 @@ return(
 )
 }
 
-export default contacto;
+export default Contacto;

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { Container } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import { promesa } from '../mocks/FalseApi'
-import ItemDetail from './itemDetail'
+import ItemDetail from './ItemDetail'
 
 const ItemDetailContainer = () => {
   const [detailProduct, setdetailProduct]=useState(true)
@@ -13,8 +12,14 @@ const ItemDetailContainer = () => {
     .then((respuesta)=>setdetailProduct(respuesta.find((item)=> item.id=== Number(detalleId))))
   }, [detalleId]) 
 
+  const AddTocart = (id) => {
+    console.log(id)
+  };
+  const delItem = () => {};
+
+
   return (
-  <ItemDetail detailProduct={detailProduct}/> 
+  <ItemDetail detailProduct={detailProduct} AddTocart={AddTocart} /> 
   )
 }
 
