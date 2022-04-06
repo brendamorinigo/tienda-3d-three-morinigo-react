@@ -12,9 +12,8 @@ function Items({ detailProduct }) {
     navigate(-1);
   };
 
-  const add = (id, cantidad) => {
-    console.log(id);
-    console.log(cantidad)
+  const add = (id) => {
+    console.log(id, cantidad);
   };
 
   return (
