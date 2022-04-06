@@ -128,3 +128,15 @@ button{
   height: 10%;
   background-color: rgb(208, 219, 238);
 }
+.contador{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-counter{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}

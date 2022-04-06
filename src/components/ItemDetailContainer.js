@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { promesa } from '../mocks/FalseApi'
 import ItemDetail from './ItemDetail'
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = (cart, setCart) => {
   const [detailProduct, setdetailProduct]=useState(true)
   const {detalleId}= useParams();
 
@@ -12,14 +12,10 @@ const ItemDetailContainer = () => {
     .then((respuesta)=>setdetailProduct(respuesta.find((item)=> item.id=== Number(detalleId))))
   }, [detalleId]) 
 
-  const AddTocart = (id) => {
-    console.log(id)
-  };
-  const delItem = () => {};
 
 
   return (
-  <ItemDetail detailProduct={detailProduct} AddTocart={AddTocart} /> 
+  <ItemDetail detailProduct={detailProduct} /> 
   )
 }
 

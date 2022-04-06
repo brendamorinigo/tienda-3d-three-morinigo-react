@@ -6,6 +6,7 @@ import Contacto from "./components/Contacto";
 import Error from "./components/Error";
 import { products } from "./mocks/FalseApi";
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -21,7 +22,7 @@ function App() {
         <Route path="/categoria/:parametro" element={<ItemlistContainer />} />
         <Route path="/contacto" element={<Contacto />} />
         <Route path="detail/:detalleId" element={<ItemDetail />} />{" "}
-        {/* pide un unico item */}
+        <Route path=""></Route>
         <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
