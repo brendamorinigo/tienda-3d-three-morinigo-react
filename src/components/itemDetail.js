@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import ItemCount from "./ItemCount";
+import ItemCount from "./itemCount";
 
 function Items({ detailProduct }) {
   const [cantidad, setCantidad] = useState(0);

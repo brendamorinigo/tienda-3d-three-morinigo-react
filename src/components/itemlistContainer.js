@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Itemlist from "./Itemlist";
-import { promesa } from "../mocks/FalseApi";
-import Presentacion from "./HeaderPresentacion";
+import Itemlist from "./itemlist";
+import { promesa } from "../mocks/falseApi";
+import Presentacion from "./headerPresentacion";
 import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {

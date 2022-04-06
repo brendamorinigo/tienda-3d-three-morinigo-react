@@ -1,10 +1,10 @@
-import NavBar from "./components/NavBar";
-import ItemlistContainer from "./components/ItemlistContainer";
-import ItemDetail from "./components/ItemDetailContainer";
+import NavBar from "./components/navBar";
+import ItemlistContainer from "./components/itemlistContainer";
+import ItemDetail from "./components/itemDetailContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Contacto from "./components/Contacto";
-import Error from "./components/Error";
-import { products } from "./mocks/FalseApi";
+import Contacto from "./components/contacto";
+import Error from "./components/error";
+import { products } from "./mocks/falseApi";
 
 
 function App() {

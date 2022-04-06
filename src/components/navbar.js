@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Cartwidgets from "./CartWidgets";
-import LinkCategorias from "./LinkCategorias";
+import Cartwidgets from "./cartWidgets";
+import LinkCategorias from "./linkCategorias";
 
 function NavBar({ }) {
   const links= [{name:"nezuko", url:"/categoria/nezuko", id:1},{name:"sukuna", url:"/categoria/sukuna",id:2},{name:"adorno", url:"/categoria/adorno",id:3}]
