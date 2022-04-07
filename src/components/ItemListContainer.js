@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Itemlist from "./itemlist";
-import { promesa } from "../mocks/falseApi";
-import Presentacion from "./headerPresentacion";
+import ItemList from "./ItemList";
+import { promesa } from "../mocks/FalseApi";
+import Presentacion from "./HeaderPresentacion";
 import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
@@ -32,7 +32,7 @@ const ItemListContainer = () => {
         <Presentacion />
       </div>
       {loading ? <p>Loading...</p> : ""}
-      <Itemlist lista={lista} />
+      <ItemList lista={lista} />
     </div>
   );
 };

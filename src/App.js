@@ -1,11 +1,10 @@
-import NavBar from "./components/navBar";
-import ItemlistContainer from "./components/itemlistContainer";
-import ItemDetail from "./components/itemDetailContainer";
+import NavBar from "./components/Navbar";
+import ItemListContainer from "./components/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Contacto from "./components/contacto";
-import Error from "./components/error";
-import { products } from "./mocks/falseApi";
-
+import Contacto from "./components/Contacto";
+import Error from "./components/Error";
+import { products } from "./mocks/FalseApi";
 
 function App() {
   return (
@@ -18,10 +17,10 @@ function App() {
         </header>
       </div>
       <Routes>
-        <Route path="/" element={<ItemlistContainer />} />
-        <Route path="/categoria/:parametro" element={<ItemlistContainer />} />
+        <Route path="/" element={<ItemListContainer />} />
+        <Route path="/categoria/:parametro" element={<ItemListContainer />} />
         <Route path="/contacto" element={<Contacto />} />
-        <Route path="detail/:detalleId" element={<ItemDetail />} />{" "}
+        <Route path="detail/:detalleId" element={<ItemDetailContainer />} />
         <Route path=""></Route>
         <Route path="*" element={<Error />} />
       </Routes>
