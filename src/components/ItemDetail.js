@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Button, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import ItemCount from "./itemCount";
+import ItemCount from "./ItemCount";
 
-function Items({ detailProduct }) {
+function ItemDetail({ detailProduct }) {
   const [cantidad, setCantidad] = useState(0);
 
   const navigate = useNavigate();
@@ -43,4 +43,4 @@ function Items({ detailProduct }) {
     </div>
   );
 }
-export default Items;
+export default ItemDetail;
