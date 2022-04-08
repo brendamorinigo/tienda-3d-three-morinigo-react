@@ -1,5 +1,5 @@
 import react from 'react'
-import Item from './items'
+import Item from './Item'
 
 const listItem=({lista})=>{
     return(

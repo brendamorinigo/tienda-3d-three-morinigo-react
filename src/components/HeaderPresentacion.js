@@ -1,6 +1,6 @@
 import react from "react"
 
-function headerPresentacion() { 
+function HeaderPresentacion() { 
     return(
         <div>
         <div className="contendor-presentacion">
@@ -15,4 +15,4 @@ function headerPresentacion() {
     )
  }
 
-export default headerPresentacion;
+export default HeaderPresentacion;
