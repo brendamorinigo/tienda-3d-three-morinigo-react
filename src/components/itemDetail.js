@@ -1,9 +1,15 @@
-import React, { useState } from "react";
-import { Button, Card } from "react-bootstrap";
+import React, { useContext, useState } from "react";
+import { Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import ItemCount from "./itemCount";
+import { CartContext } from "../context/CartContext";
 
-function Items({ detailProduct }) {
+
+function Items({ detailProduct}) {
+  const {cart, addItem, itemInCart}= useContext(CartContext);
+  console.log(itemInCart(detailProduct.id) );
+
+
   const [cantidad, setCantidad] = useState(0);
 
   const navigate = useNavigate();
@@ -12,8 +18,11 @@ function Items({ detailProduct }) {
     navigate(-1);
   };
 
-  const add = (id) => {
-    console.log(id, cantidad);
+  const addCart = () => {
+    const itemAdd={
+      detailProduct
+    }
+    addItem(itemAdd)
   };
 
   return (
@@ -30,7 +39,7 @@ function Items({ detailProduct }) {
         </Card.Body>
         <ItemCount
           stock={detailProduct.stock}
-          addTocart={add}
+          addTocart={addCart}
           id={detailProduct.id}
           cantidad={cantidad}
           setCantidad={setCantidad}
