@@ -1,29 +1,27 @@
-import NavBar from "./components/navBar";
-import ItemlistContainer from "./components/itemlistContainer";
-import ItemDetail from "./components/itemDetailContainer";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Contacto from "./components/contacto";
-import Error from "./components/error";
-import { products } from "./mocks/falseApi";
-import { CartContext } from "./context/CartContext";
 import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NavBar from "./components/Navbar";
+import ItemlistContainer from "./components/ItemListContainer";
+import ItemDetail from "./components/ItemDetailContainer";
+import Contacto from "./components/Contacto";
+import Error from "./components/Error";
+import { products } from "./mocks/FalseApi";
+import { CartContext } from "./context/CartContext";
 
 function App() {
+  const [cart, setCart] = useState([]);
+  console.log(cart);
 
-  const [cart, setCart]= useState([]);
-  console.log(cart)
+  function addItem(item) {
+    setCart([...cart, item]);
+  }
+  function itemInCart(id) {
+    console.log(id);
+    return cart.some((prod) => prod.id === id);
+  }
 
-    
-    function addItem(item){
-      setCart([...cart,item])
-    }
-    function itemInCart (id){
-      console.log (id)
-      return cart.some(prod=> prod.id===id)
-    }
-    
   return (
-    <CartContext.Provider value={{cart, addItem, itemInCart}} >
+    <CartContext.Provider value={{ cart, addItem, itemInCart }}>
       <BrowserRouter>
         <div className="App">
           <header className="App-header">
