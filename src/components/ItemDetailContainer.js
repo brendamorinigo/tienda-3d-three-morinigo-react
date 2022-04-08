@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { promesa } from '../mocks/falseApi'
 import ItemDetail from './itemDetail'
 
-const ItemDetailContainer = (cart, setCart) => {
+const ItemDetailContainer = () => {
   const [detailProduct, setdetailProduct]=useState(true)
   const {detalleId}= useParams();
 
