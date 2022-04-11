@@ -1,21 +1,24 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Card, Button } from "react-bootstrap";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ItemCount from "./ItemCount";
 import { CartContext } from "../context/CartContext";
 
-function ItemDetail({ name, price, stock, id, categoria, detail, img}) {
-  const { cart, addItem, itemInCart, cantidad, setCantidad} = useContext(CartContext);
- 
+function ItemDetail({ name, price, stock, id, categoria, detail, img }) {
+  const { cart, addItem, itemInCart } = useContext(CartContext);
+  console.log(itemInCart(id));
+
   const navigate = useNavigate();
 
   const handleNavigate = () => {
     navigate(-1);
   };
 
-  const addCart = () => {
-    const itemAdd= {name, price, stock, cantidad, id, categoria}
+  const addCart = (cantidad) => {
+    if(cantidad<=stock){
+    const itemAdd = { name, price, stock, cantidad, id, categoria };
     addItem(itemAdd);
+    }
   };
 
   return (
@@ -31,20 +34,15 @@ function ItemDetail({ name, price, stock, id, categoria, detail, img}) {
           <Card.Text>{detail} </Card.Text>
         </Card.Body>
 
-        <ItemCount
-          stock={stock}
-          addTocart={addCart}
-          id={id}
-          cantidad={cantidad}
-          setCantidad={setCantidad}
-        />
-        
-      <Button to="/cart" variant="primary" className="btn-contador" >
-        Finalizar compra
-      </Button>
+        {!itemInCart(id) ? (
+          <ItemCount stock={stock} addTocart={addCart} />
+        ) : (
+         <Link to="/cart" ><Button  variant="primary" className="btn-contador">
+            Finalizar compra
+          </Button></Link>
+        )}
       </Card>
-    
-      
+
       <button className="btn-return" onClick={handleNavigate}>
         Ir a pagina anterior
       </button>

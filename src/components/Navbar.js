@@ -1,10 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import LinkCategorias from "./LinkCategorias";
 import CartWidgets from "./CartWidgets";
 
-function NavBar({}) {
-  const{cantidad}= useContext;
+function NavBar() {
   const links = [
     { name: "nezuko", url: "/categoria/nezuko", id: 1 },
     { name: "sukuna", url: "/categoria/sukuna", id: 2 },
@@ -25,7 +24,7 @@ function NavBar({}) {
           ))}
         </div>
       </div>
-      <CartWidgets cantidad= {cantidad} />
+      <CartWidgets/>
     </nav>
   );
 }

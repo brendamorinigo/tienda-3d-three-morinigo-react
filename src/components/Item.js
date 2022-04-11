@@ -10,8 +10,6 @@ function Item({product}){
                     <Card.Title>{product.name}</Card.Title>
                     <Card.Text>Precio: ${product.price} </Card.Text>
                  </Card.Body>   
-             <Button variant="primary" className="btn-contador" >Agregar</Button>
-             <Button variant="primary" className="btn-contador"  >Eliminar</Button> 
              <Link to={ `/detail/${product.id}`}><Button variant="primary" className="btn-contador" >Ver mas</Button></Link>
         </Card> 
     </div>

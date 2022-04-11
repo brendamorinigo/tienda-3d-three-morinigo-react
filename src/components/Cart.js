@@ -4,6 +4,7 @@ import { Card } from "react-bootstrap";
 
 function Cart() {
   const { cart } = useContext(CartContext);
+  
   return (
     <div className="container-cart">
       <h3>Mis productos</h3>
