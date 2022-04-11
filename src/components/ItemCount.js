@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
-function ItemCount({stock, addTocart, id, cantidad, setCantidad}) {
+function ItemCount({stock, addTocart}) {
+  const [cantidad, setCantidad]= useState(0);
 
   const sumar = () => {
     cantidad < stock && setCantidad(cantidad + 1);
@@ -21,7 +22,8 @@ function ItemCount({stock, addTocart, id, cantidad, setCantidad}) {
         +
       </Button>
       </div>
-      <Button onClick={()=>addTocart(id)}>Agregar al carro</Button>
+      <Button onClick={()=>addTocart(cantidad)}>Agregar al carro</Button>
+      
     </div>
   );
 }
