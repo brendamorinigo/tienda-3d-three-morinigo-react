@@ -1,17 +1,12 @@
 import React, { useContext, useState } from "react";
-import { Card } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { Card, Button } from "react-bootstrap";
+import { Link,useNavigate } from "react-router-dom";
 import ItemCount from "./ItemCount";
 import { CartContext } from "../context/CartContext";
 
-
-function Items({ detailProduct}) {
-  const {cart, addItem, itemInCart}= useContext(CartContext);
-  console.log(itemInCart(detailProduct.id) );
-
-
-  const [cantidad, setCantidad] = useState(0);
-
+function ItemDetail({ name, price, stock, id, categoria, detail, img}) {
+  const { cart, addItem, itemInCart, cantidad, setCantidad} = useContext(CartContext);
+ 
   const navigate = useNavigate();
 
   const handleNavigate = () => {
@@ -19,37 +14,41 @@ function Items({ detailProduct}) {
   };
 
   const addCart = () => {
-    const itemAdd={
-      detailProduct
-    }
-    addItem(itemAdd)
+    const itemAdd= {name, price, stock, cantidad, id, categoria}
+    addItem(itemAdd);
   };
 
   return (
     <div className="card">
       <div className="titulo-producto">
-        <h4>{detailProduct.name}</h4>
+        <h4>{name}</h4>
       </div>
       <Card style={{ width: "18rem" }} className="contenedor-card">
-        <Card.Img variant="top" src={detailProduct.img} />
+        <Card.Img variant="top" src={img} />
         <Card.Body>
-          <Card.Title>{detailProduct.name}</Card.Title>
-          <h5>Precio: ${detailProduct.price},00</h5>
-          <Card.Text>{detailProduct.detail} </Card.Text>
+          <Card.Title>{name}</Card.Title>
+          <h5>Precio: ${price},00</h5>
+          <Card.Text>{detail} </Card.Text>
         </Card.Body>
+
         <ItemCount
-          stock={detailProduct.stock}
+          stock={stock}
           addTocart={addCart}
-          id={detailProduct.id}
+          id={id}
           cantidad={cantidad}
           setCantidad={setCantidad}
         />
+        
+      <Button to="/cart" variant="primary" className="btn-contador" >
+        Finalizar compra
+      </Button>
       </Card>
-
+    
+      
       <button className="btn-return" onClick={handleNavigate}>
         Ir a pagina anterior
       </button>
     </div>
   );
 }
-export default Items;
+export default ItemDetail;

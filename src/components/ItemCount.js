@@ -27,4 +27,3 @@ function ItemCount({stock, addTocart, id, cantidad, setCantidad}) {
 }
 
 export default ItemCount;
-

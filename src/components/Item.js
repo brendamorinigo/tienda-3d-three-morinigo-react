@@ -18,4 +18,3 @@ function Item({product}){
       )
 }
 export default Item;
-

@@ -12,10 +12,14 @@ const ItemDetailContainer = () => {
     .then((respuesta)=>setdetailProduct(respuesta.find((item)=> item.id=== Number(detalleId))))
   }, [detalleId]) 
 
-
-
   return (
-  <ItemDetail detailProduct={detailProduct} /> 
+  <ItemDetail 
+  name={detailProduct.name}
+  price={detailProduct.price}
+  categoria={detailProduct.categoria}
+  id={detailProduct.id}
+  stock={detailProduct.stock}
+  img={detailProduct.img} /> 
   )
 }
 
