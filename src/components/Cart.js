@@ -3,8 +3,7 @@ import { CartContext } from "../context/CartContext";
 import { Card } from "react-bootstrap";
 
 function Cart() {
-  const { cart } = useContext(CartContext);
-  
+  const { cart, total } = useContext(CartContext);
   return (
     <div className="container-cart">
       <h3>Mis productos</h3>
@@ -18,6 +17,9 @@ function Cart() {
             </Card>
           </div>
         ))}
+        <div>
+        <h3>Total: ${total()}</h3>
+        </div>
       </div>
     </div>
   );
