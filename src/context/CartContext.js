@@ -1,6 +1,5 @@
 import { createContext } from "react";
 import React, { useState } from "react";
-import { clear } from "@testing-library/user-event/dist/clear";
 
 export const CartContext = createContext();
 
@@ -27,13 +26,15 @@ export const CartProvider = ({children}) => {
 
   function clearCart(){
     setCart([])
+    console.log(cart)
   }
-  function deleteItem() {
-    
-    }
+  function deleteItem(id){
+    const prodInCart= cart.filter(productInCart => productInCart.id !== id)
+    setCart(prodInCart);} 
+  
   return (
     <CartContext.Provider
-      value={{ cart, addItem, itemInCart, cantItems, total, clearCart, clearItem}}>
+      value={{ cart, addItem, itemInCart, cantItems, total, clearCart, deleteItem}}>
         {children}
     </CartContext.Provider>
   );
