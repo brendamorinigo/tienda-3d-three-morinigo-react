@@ -22,8 +22,11 @@ function ItemCount({stock, addTocart}) {
         +
       </Button>
       </div>
-      <Button onClick={()=>addTocart(cantidad)}>Agregar al carro</Button>
       
+      {stock > 0 ?
+      <Button onClick={()=>addTocart(cantidad)}>Agregar al carro</Button>
+      : <h3>Sin Stock</h3>
+      }
     </div>
   );
 }

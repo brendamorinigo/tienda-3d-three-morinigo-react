@@ -4,6 +4,7 @@ import { Card, Button} from "react-bootstrap";
 
 function Cart() {
   const { cart, total,clearCart, deleteItem } = useContext(CartContext);
+
   return (
     <div className="container-cart">
       <h3>Mis productos</h3>
@@ -14,7 +15,7 @@ function Cart() {
               <h5>Articulo: {art.name}</h5>
               <h5>Cantidad: {art.cantidad}</h5>
               <h4>Total: {art.price * art.cantidad} </h4>
-              <button type="button" >Eliminar</button>
+              <button type="button" onClick={()=>deleteItem(art.id) } >Eliminar</button>
             </Card>
           </div>
         ))}

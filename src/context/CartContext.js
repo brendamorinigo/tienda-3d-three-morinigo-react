@@ -8,8 +8,11 @@ export const CartProvider = ({children}) => {
   console.log(cart)
 
   function addItem(item) {
-    setCart([...cart, item]);
-
+    if (item.cantidad >0 ){
+      setCart([...cart, item]);
+    }else{
+      alert("La cantidad debe ser mayor a 0")
+    }
   }
 
   function itemInCart(id) {
@@ -26,7 +29,6 @@ export const CartProvider = ({children}) => {
 
   function clearCart(){
     setCart([])
-    console.log(cart)
   }
   function deleteItem(id){
     const prodInCart= cart.filter(productInCart => productInCart.id !== id)
