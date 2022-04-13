@@ -10,7 +10,7 @@ function Item({product}){
                     <Card.Title>{product.name}</Card.Title>
                     <Card.Text>Precio: ${product.price} </Card.Text>
                  </Card.Body>   
-             <Link to={ `/detail/${product.id}`}><Button variant="primary" className="btn-contador" >Ver mas</Button></Link>
+             <Link to={ `/detail/${product.id}`}><Button variant="primary" className="btn-ver" >Ver mas</Button></Link>
         </Card> 
     </div>
       )

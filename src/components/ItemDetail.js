@@ -15,10 +15,11 @@ function ItemDetail({ name, price, stock, id, categoria, detail, img }) {
   };
 
   const addCart = (cantidad) => {
-    if(cantidad<=stock){
+    if(cantidad<=stock|| stock >0){
     const itemAdd = { name, price, stock, cantidad, id, categoria };
     addItem(itemAdd);
     }
+
   };
 
   return (
@@ -33,7 +34,6 @@ function ItemDetail({ name, price, stock, id, categoria, detail, img }) {
           <h5>Precio: ${price},00</h5>
           <Card.Text>{detail} </Card.Text>
         </Card.Body>
-
         {!itemInCart(id) ? (
           <ItemCount stock={stock} addTocart={addCart} />
         ) : (
