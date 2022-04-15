@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { promesa } from '../mocks/FalseApi'
 import ItemDetail from './ItemDetail'
+import { datab } from '../firebase/config'
+import { doc, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const [detailProduct, setdetailProduct]=useState(true)
   const {detalleId}= useParams();
 
-   useEffect(()=>{
-     promesa
-    .then((respuesta)=>setdetailProduct(respuesta.find((item)=> item.id=== Number(detalleId))))
-  }, [detalleId]) 
+   useEffect(()=> {
+     const detailFireBase= doc(datab, "Productos", detalleId)  
+     getDoc(detailFireBase)
+     .then(art=>{
+       setdetailProduct({id: art.id, ...art.data()})
+     })
+  },[detalleId]) 
 
   return (
   <ItemDetail 

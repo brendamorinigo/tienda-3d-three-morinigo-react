@@ -5,9 +5,9 @@ import CartWidgets from "./CartWidgets";
 
 function NavBar() {
   const links = [
-    { name: "nezuko", url: "/categoria/nezuko", id: 1 },
-    { name: "sukuna", url: "/categoria/sukuna", id: 2 },
-    { name: "adorno", url: "/categoria/adorno", id: 3 },
+    { name: "Coleccion", url: "/categoria/Coleccion", id: 1 },
+    { name: "Cortantes", url: "/categoria/Cortante", id: 2 },
+    { name: "Adornos", url: "/categoria/Adornos", id: 3 },
   ];
   return (
     <nav className="navbar navbar-expand-sm navbar-dark bg-dark">

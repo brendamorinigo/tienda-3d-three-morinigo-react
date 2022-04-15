@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Itemlist from "./ItemList";
-import { promesa } from "../mocks/FalseApi";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import Presentacion from "./HeaderPresentacion";
 import { useParams } from "react-router-dom";
-
+import { datab } from "../firebase/config";
 
 const ItemListContainer = () => {
-
   const [lista, setlista] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -14,18 +13,18 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     setLoading(true);
-    promesa
-      .then((result) => {
-        if (parametro) {
-          setlista(
-            result.filter((productos) => productos.categoria === parametro)
-          );
-        } else {
-          setlista(result);
-        }
-      })
-      .catch((bad) => console.log("error"))
-      .finally(() => setLoading(false));
+
+    const collectionFs = collection(datab, "Productos");
+    const filterCategory= parametro ? query(collectionFs, where('categoria', '==', parametro)) : collectionFs;
+
+    getDocs(filterCategory)
+    .then(respuesta => {
+      const articulos= respuesta.docs.map((item)=> ({id:item.id, ...item.data()}))
+      setlista(articulos)
+    })
+    .finally(()=>{
+      setLoading(false)
+    })
   }, [parametro]);
 
   return (
