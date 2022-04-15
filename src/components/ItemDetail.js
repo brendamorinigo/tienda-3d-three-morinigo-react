@@ -6,7 +6,6 @@ import { CartContext } from "../context/CartContext";
 
 function ItemDetail({ name, price, stock, id, categoria, detail, img }) {
   const { cart, addItem, itemInCart } = useContext(CartContext);
-  console.log(itemInCart(id));
 
   const navigate = useNavigate();
 
@@ -15,11 +14,10 @@ function ItemDetail({ name, price, stock, id, categoria, detail, img }) {
   };
 
   const addCart = (cantidad) => {
-    if(cantidad<=stock|| stock >0){
-    const itemAdd = { name, price, stock, cantidad, id, categoria };
-    addItem(itemAdd);
+    if (cantidad <= stock || stock > 0) {
+      const itemAdd = { name, price, stock, cantidad, id, categoria };
+      addItem(itemAdd);
     }
-
   };
 
   return (
@@ -37,9 +35,11 @@ function ItemDetail({ name, price, stock, id, categoria, detail, img }) {
         {!itemInCart(id) ? (
           <ItemCount stock={stock} addTocart={addCart} />
         ) : (
-         <Link to="/cart" ><Button  variant="primary" className="btn-contador">
-            Finalizar compra
-          </Button></Link>
+          <Link to="/cart">
+            <Button variant="primary" className="btn-contador">
+              Finalizar compra
+            </Button>
+          </Link>
         )}
       </Card>
 
