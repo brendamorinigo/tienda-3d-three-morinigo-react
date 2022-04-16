@@ -3,14 +3,14 @@ import React, { useState } from "react";
 
 export const CartContext = createContext();
 
-export const CartProvider = ({children}) => {
+export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
   function addItem(item) {
-    if (item.cantidad >0 ){
+    if (item.cantidad > 0) {
       setCart([...cart, item]);
-    }else{
-      alert("La cantidad debe ser mayor a 0")
+    } else {
+      alert("La cantidad debe ser mayor a 0");
     }
   }
 
@@ -19,24 +19,33 @@ export const CartProvider = ({children}) => {
   }
 
   function cantItems() {
-      return cart.reduce((acc, prod) => (acc += prod.cantidad), 0)
+    return cart.reduce((acc, prod) => (acc += prod.cantidad), 0);
+  }
+  function total() {
+    return cart.reduce((acc, prod) => (acc += prod.cantidad * prod.price), 0);
+  }
 
+  function clearCart() {
+    setCart([]);
   }
-  function total(){
-    return cart.reduce((acc, prod) => (acc += prod.cantidad * prod.price),0)
+  function deleteItem(id) {
+    const prodInCart = cart.filter((productInCart) => productInCart.id !== id);
+    setCart(prodInCart);
   }
 
-  function clearCart(){
-    setCart([])
-  }
-  function deleteItem(id){
-    const prodInCart= cart.filter(productInCart => productInCart.id !== id)
-    setCart(prodInCart);} 
-  
   return (
     <CartContext.Provider
-      value={{ cart, addItem, itemInCart, cantItems, total, clearCart, deleteItem}}>
-        {children}
+      value={{
+        cart,
+        addItem,
+        itemInCart,
+        cantItems,
+        total,
+        clearCart,
+        deleteItem,
+      }}
+    >
+      {children}
     </CartContext.Provider>
   );
 };

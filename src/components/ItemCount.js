@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-
+/* cantidad < stock && setCantidad(cantidad + 1); */
 function ItemCount({stock, addTocart}) {
   const [cantidad, setCantidad]= useState(0);
 
   const sumar = () => {
-    cantidad < stock && setCantidad(cantidad + 1);
+    if(cantidad < stock){
+      setCantidad(cantidad + 1)
+      stock= stock - cantidad;
+    }
+    
   };
   const restar = () => {
     cantidad > 0 && setCantidad(cantidad - 1);

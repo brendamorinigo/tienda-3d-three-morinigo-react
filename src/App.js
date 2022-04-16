@@ -6,8 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Contacto from "./components/Contacto";
 import Error from "./components/Error";
 import { products } from "./mocks/FalseApi";
-import {CartProvider } from "./context/CartContext";
-
+import { CartProvider } from "./context/CartContext";
+import CheckOut from "./components/CheckOut";
 
 function App() {
   return (
@@ -26,6 +26,7 @@ function App() {
           <Route path="/contacto" element={<Contacto />} />
           <Route path="detail/:detalleId" element={<ItemDetail />} />{" "}
           <Route path="/cart" element={<CartView />}></Route>
+          <Route path="/checkOut" element={<CheckOut />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </BrowserRouter>
