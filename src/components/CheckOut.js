@@ -1,13 +1,16 @@
 import React, { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
-import { collection, addDoc} from "firebase/firestore";
+import { collection, addDoc, getDoc, updateDoc, doc } from "firebase/firestore";
 import { datab } from "../firebase/config";
+import { Link, Navigate } from "react-router-dom";
+
 
 export default function CheckOut() {
-  const { cart, total } = useContext(CartContext);
+  const { cart, total, clearCart } = useContext(CartContext);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [orderNumber, setOrderNumber]= useState(null)
 
   /* FUNCIONES DE VALUE */
   function enteredName(e) {
@@ -31,13 +34,39 @@ export default function CheckOut() {
         telefono: phone,
       },
     };
-    const formData= collection (datab, "Pedidos");
+    const formData = collection(datab, "Pedidos");
 
-    addDoc(formData,pedido)
-    .then((doc)=>{
-        console.log(doc.id)
-    })
+    /* MODIFICAR EL STOCK */
+    cart.forEach((element) => {
+      const artStock= doc(datab, 'Productos', element.id)
+
+      getDoc(artStock)
+      .then((res)=>{
+        updateDoc(artStock,{ stock: res.data().stock - element.cantidad})
+      })
+    });
+
+ 
+    addDoc(formData, pedido).then((doc) => {
+      console.log(doc.id);
+      setOrderNumber(doc.id)
+      clearCart();
+      
+    });
   }
+/* Funcion para generar num. de orden */
+if(orderNumber){
+  return <div>
+    <h3>Pedido realizado con exito </h3>
+    <h3>Orden numero:{orderNumber} </h3>
+    <Link to="/" className="btn btn-primary">Volver a inicio</Link>
+  </div>
+}
+  /* Redirigir */
+if(cart.length=== 0){
+  return <Navigate to="/" />
+}
+
 
   return (
     <div>
@@ -47,6 +76,7 @@ export default function CheckOut() {
         <div className="form-group">
           <label for="enteredEmail">Email</label>
           <input
+            required
             value={email}
             type="text"
             className="form-control"
@@ -63,6 +93,7 @@ export default function CheckOut() {
         <div className="form-group">
           <label for="enteredName">Nombre y Apellido</label>
           <input
+            required
             value={name}
             type="text"
             className="form-control"
@@ -75,6 +106,7 @@ export default function CheckOut() {
         <div className="form-group">
           <label for="enteredPhone">Telefono</label>
           <input
+            required
             value={phone}
             type="text"
             className="form-control"
@@ -93,3 +125,9 @@ export default function CheckOut() {
     </div>
   );
 }
+
+
+
+/* const form= document.querySelector("#formulario-agregar"); 
+  form.reset();
+  */
