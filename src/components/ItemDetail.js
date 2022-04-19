@@ -42,10 +42,9 @@ function ItemDetail({ name, price, stock, id, categoria, detail, img }) {
           </Link>
         )}
       </Card>
-
-      <button className="btn-return" onClick={handleNavigate}>
-        Ir a pagina anterior
-      </button>
+      <Button variant="primary" className="btn-return" onClick={handleNavigate}>
+      Ir a pagina anterior
+              </Button>
     </div>
   );
 }
