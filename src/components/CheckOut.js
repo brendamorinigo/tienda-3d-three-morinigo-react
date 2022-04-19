@@ -126,8 +126,3 @@ if(cart.length=== 0){
   );
 }
 
-
-
-/* const form= document.querySelector("#formulario-agregar"); 
-  form.reset();
-  */
