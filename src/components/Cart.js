@@ -11,9 +11,10 @@ function Cart() {
       <h3>Mis productos</h3>
       <div>
         {cart.map((art) => (
-          <div key={art.id}>
-            <Card style={{ width: "18rem" }} className="contenedor-card">
+          <div className="container-products" key={art.id}>
+            <Card style={{ width: "60rem" }} className="item-products"> 
               <h5>Articulo: {art.name}</h5>
+              
               <h5>Cantidad: {art.cantidad}</h5>
               <h4>Total: {art.price * art.cantidad} </h4>
               <button type="button" onClick={() => deleteItem(art.id)}>
@@ -25,7 +26,7 @@ function Cart() {
         {cart === 0 ? (
           <h3>Tu carrito esta vacio</h3>
         ) : (
-          <div>
+          <div className="container-count">
             <h3>Total: ${total()}</h3>
             <Button
               variant="primary"

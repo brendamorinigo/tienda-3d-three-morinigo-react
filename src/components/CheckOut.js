@@ -4,13 +4,12 @@ import { collection, addDoc, getDoc, updateDoc, doc } from "firebase/firestore";
 import { datab } from "../firebase/config";
 import { Link, Navigate } from "react-router-dom";
 
-
 export default function CheckOut() {
   const { cart, total, clearCart } = useContext(CartContext);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [orderNumber, setOrderNumber]= useState(null)
+  const [orderNumber, setOrderNumber] = useState(null);
 
   /* FUNCIONES DE VALUE */
   function enteredName(e) {
@@ -38,40 +37,43 @@ export default function CheckOut() {
 
     /* MODIFICAR EL STOCK */
     cart.forEach((element) => {
-      const artStock= doc(datab, 'Productos', element.id)
+      const artStock = doc(datab, "Productos", element.id);
 
-      getDoc(artStock)
-      .then((res)=>{
-        updateDoc(artStock,{ stock: res.data().stock - element.cantidad})
-      })
+      getDoc(artStock).then((res) => {
+        updateDoc(artStock, { stock: res.data().stock - element.cantidad });
+      });
     });
 
- 
     addDoc(formData, pedido).then((doc) => {
       console.log(doc.id);
-      setOrderNumber(doc.id)
+      setOrderNumber(doc.id);
       clearCart();
-      
     });
   }
-/* Funcion para generar num. de orden */
-if(orderNumber){
-  return <div>
-    <h3>Pedido realizado con exito </h3>
-    <h3>Orden numero:{orderNumber} </h3>
-    <Link to="/" className="btn btn-primary">Volver a inicio</Link>
-  </div>
-}
+  /* Funcion para generar num. de orden */
+  if (orderNumber) {
+    return (
+      <div className="container-order">
+        <h2>Pedido realizado con exito </h2>
+        <h3>Su numero de orden es:{orderNumber}</h3>
+        <p>En breve te enviaremos novedades de tu pedido. Muchas gracias</p>
+        
+        <div className="btn-return-cart">
+          <Link to="/" className="btn btn-primary">
+            Volver a inicio
+          </Link>
+        </div>
+      </div>
+    );
+  }
   /* Redirigir */
-if(cart.length=== 0){
-  return <Navigate to="/" />
-}
-
+  if (cart.length === 0) {
+    return <Navigate to="/" />;
+  }
 
   return (
-    <div>
-      <h3>Finalizar compra</h3>
-
+    <div className="check-out">
+      <h2 className="h3-check">Finalizar compra</h2>
       <form onSubmit={submitForm}>
         <div className="form-group">
           <label for="enteredEmail">Email</label>
@@ -125,4 +127,3 @@ if(cart.length=== 0){
     </div>
   );
 }
-

@@ -23,7 +23,7 @@ function ItemDetail({ name, price, stock, id, categoria, detail, img }) {
   return (
     <div className="card">
       <div className="titulo-producto">
-        <h4>{name}</h4>
+        <h2>{name}</h2>
       </div>
       <Card style={{ width: "18rem" }} className="contenedor-card">
         <Card.Img variant="top" src={img} />

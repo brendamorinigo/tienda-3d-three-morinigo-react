@@ -6,20 +6,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-body{
-  background-color: rgb(220, 248, 239);
-}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-body{
-  background-image: url(../img/low-poly-grid-haikei.png);
-  background-repeat:repeat;
-  background-size: contain;
-}
+
 .card{
   margin-top: 4rem;
+}
+ body {
+  background-image: url(../img/low-poly-grid-haikei.png);
+  background-repeat: repeat;
+  background-size: contain;
 }
 
 button{
@@ -50,18 +49,7 @@ button{
   border-bottom: 1px solid rgb(68, 67, 67);
   margin: 0 auto;
 }
-.contendor-presentacion{
-  text-align: center;
-  width: 90%;
-  height:300px;
-  background-image:url(/img/Impresion-3d.jpg);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size:cover;
-  color: rgb(252, 252, 250);
-  margin: 0 auto;
-  font-size: 1.5rem;
-}
+
 .contendor-presentacion p{
   margin: 15px;
 }
@@ -109,14 +97,15 @@ button{
   background-color: rgb(57, 69, 69);
 }
 .cart{
-  background-color: aliceblue;
+  background-color: rgb(58, 60, 61);
   display: flex;
   justify-content: center;
   margin-right: 1rem;
   padding: 2px;
+  border-radius: 2px;
 }
 .cart:hover{
-  background-color: rgb(61, 58, 58);
+  background-color: rgb(213, 216, 246);
   padding: 4px;
 }
 .titulo-producto{
@@ -148,7 +137,7 @@ button{
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(210, 217, 243);
+  background-color: rgba(210, 217, 243, 0.577);
 }
 form{
   background-color: azure;
@@ -163,3 +152,65 @@ form{
    display: flex;
    justify-content: space-evenly;
  }
+
+ .contendor-presentacion{
+  text-align: center;
+  width: 90%;
+  height:300px;
+  background-image:url(/img/Impresion-3d.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size:cover;
+  color: rgb(252, 252, 250);
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
+ .card{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(237, 243, 243, 0.588);
+} 
+.item-products{
+  background-color: rgba(240, 248, 255, 0.686);
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  padding: 1rem;
+  margin: 1rem;
+}
+ 
+.container-count{
+  margin: 2rem;
+}
+.check-out{
+  background-color: rgba(237, 243, 243, 0.729);
+  margin: 2rem;
+  height: 30rem;
+}
+.check-out .h3-check{
+  text-align: center;
+  margin: 2rem;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.container-order{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(237, 243, 243, 0.729);
+  height: 30rem;
+}
+.btn-return-cart{
+  margin: 2rem;
+}
+a{
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+.h5-cart{
+  color: rgb(68, 138, 199);
+  padding: 2px;
+}
