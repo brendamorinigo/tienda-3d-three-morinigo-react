@@ -1,10 +1,204 @@
 body {
-    background-color: black;
+    background-color: rgb(80, 22, 59);
     background-repeat: repeat;
     background-size: contain;
   }
-  body {
-    background-repeat: repeat;
-    background-size: contain;
+
+.card{
+    margin:10px;
+    border: 0.2px solid rgb(232, 222, 222);
+    margin-top: 4rem;
+
+    h3{
+      text-align: center;
+    }
   }
-  
+.mb-3{
+  display:flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 50%;
+  textarea{
+    margin: 0 auto;
+    border-radius: 3px;
+  }
+  input{
+    margin: 5px;
+    border-radius: 3px;
+  } 
+}
+
+button{
+  margin: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-count{
+  align-items: center;
+}
+.containerCard{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.separador{
+  width: 90%;
+  height: 20%;
+  border-bottom: 1px solid rgb(68, 67, 67);
+  margin: 0 auto;
+}
+
+.form{
+  background-color: bisque;
+  height: 300px;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 3rem;
+  border-radius: 10px;
+}
+
+.container-input{
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+.navbar-brand{
+  margin-left: 1rem;
+}
+.nav-link:hover{
+  background-color: rgb(57, 69, 69);
+}
+.cart{
+  background-color: rgb(58, 60, 61);
+  display: flex;
+  justify-content: center;
+  margin-right: 1rem;
+  padding: 2px;
+  border-radius: 2px;
+}
+.cart:hover{
+  background-color: rgb(213, 216, 246);
+  padding: 4px;
+}
+.titulo-producto{
+  margin: 2rem;
+  text-align: center;
+  border-bottom: 1px solid rgb(167, 163, 163);
+}
+.btn-return{
+  margin: 20px;
+  width: 30%;
+  height: 10%;
+  background-color: rgb(208, 219, 238);
+}
+.contador{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-counter{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-cart{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(210, 217, 243, 0.577);
+}
+form{
+  background-color: azure;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 3px;
+ }
+
+ .container-btn{
+   margin: 0 auto;
+   display: flex;
+   justify-content: space-evenly;
+ }
+
+ .contendor-presentacion{
+  margin-top: 1rem;
+  text-align: center;
+  width: 90%;
+  height:300px;
+  background-image:url(/img/4.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: rgb(252, 252, 250);
+  font-size: 1.5rem;
+}
+.container-header{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+ .card{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(237, 243, 243, 0.588);
+} 
+.item-products{
+  background-color: rgba(240, 248, 255, 0.686);
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  padding: 1rem;
+  margin: 1rem;
+}
+ 
+.container-count{
+  margin: 1.8rem;
+}
+
+.check-out{
+  background-color: rgba(237, 243, 243, 0.729);
+  margin: 2rem;
+  height: 30rem;
+}
+.check-out .h3-check{
+  text-align: center;
+  margin: 2rem;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.container-order{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(237, 243, 243, 0.729);
+  height: 30rem;
+}
+.btn-return-cart{
+  margin: 2rem;
+}
+a{
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+.h5-cart{
+  color: rgb(68, 138, 199);
+  padding: 2px;
+}
+.container-text{
+  padding: 15px;
+  background-color: rgba(240, 248, 255, 0.648);
+  align-items: center;
+  color: black;
+}
